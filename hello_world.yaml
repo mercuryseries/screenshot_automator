@@ -1,0 +1,79 @@
+# Configuration globale
+project:
+  path: ~/symfony-book/projects/hello-world
+  base_url: http://127.0.0.1:8000
+
+output_dir: screenshots
+
+# Valeurs par défaut (optionnel)
+defaults:
+  url: /
+  show_title_bar: false # Par défaut, pas de barre de titre, ni barre d'adresse
+  title_bar_style: chrome # Style: chrome, safari, minimal
+
+# Configuration par capture
+screenshots:
+  # Cette capture N'AURA PAS de barre de titre (valeur par défaut)
+  default-welcome-page:
+    url: /
+    viewport_width: 1280
+    viewport_height: 800
+    # output: assets/images/hello-world/default-welcome-page.png
+
+  # Cette capture AURA une barre de titre (opt-in)
+  first-response:
+    url: /
+    viewport_width: 300
+    viewport_height: 300
+    show_title_bar: true # Active la barre de titre
+    title_bar_style: chrome # Style Chrome (optionnel)
+
+  # Cette capture AURA une barre de titre (opt-in)
+  home-styled:
+    url: /
+    viewport_width: 500
+    viewport_height: 200
+    show_title_bar: true # Active la barre de titre
+    title_bar_style: chrome # Style Chrome
+
+  # Celle-ci aussi, avec un style Chrome
+  home-page:
+    url: /
+    viewport_width: 300
+    viewport_height: 300
+    show_title_bar: true
+    full_page: true
+    title_bar_style: chrome
+
+  add-paragraph:
+    url: /
+    viewport_width: 500
+    viewport_height: 500
+    full_page: true
+
+  about-page:
+    url: /about
+    viewport_width: 300
+    viewport_height: 300
+    show_title_bar: true
+    full_page: true
+    title_bar_style: chrome
+
+  long-about-page:
+    url: /about
+    show_title_bar: true
+    full_page: true
+    title_bar_style: chrome
+
+  # Style minimal
+  contact-page:
+    url: /contact
+    viewport_width: 1280
+    viewport_height: 900
+    show_title_bar: true
+    title_bar_style: minimal # Style épuré
+    # delay: 2.0  # Attendre 2 secondes (utile pour JS/Librairie lente)
+
+  error-404:
+    url: /page-inexistante
+    is_error_page: true
